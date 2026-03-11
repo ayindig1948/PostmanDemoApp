@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PostmanLib
+﻿namespace PostmanLib
 {
-    internal class Class1
+    public class Class1
     {
+
     }
 }

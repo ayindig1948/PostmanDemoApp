@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="PostManDesktop/PostManDesktop.csproj" />
+  <Project Path="Postman WinForm/Postman WinForm.csproj" Id="74850df7-4ac1-4632-9291-8a6e6fedb29b" />
   <Project Path="PostmanLib/PostmanLib.csproj" />
 </Solution>

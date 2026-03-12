@@ -29,14 +29,21 @@
         private void InitializeComponent()
         {
             HeadLabel = new Label();
-            ResultsText = new TextBox();
             CallApi = new Button();
             statusStrip1 = new StatusStrip();
             SystemStatus = new ToolStripStatusLabel();
             CallLabel = new Label();
-            ResultsLabel = new Label();
             UrlText = new TextBox();
+            MethodNav = new ComboBox();
+            CallData = new TabControl();
+            tabBody = new TabPage();
+            BodyText = new TextBox();
+            tabResults = new TabPage();
+            ResultsText = new TextBox();
             statusStrip1.SuspendLayout();
+            CallData.SuspendLayout();
+            tabBody.SuspendLayout();
+            tabResults.SuspendLayout();
             SuspendLayout();
             // 
             // HeadLabel
@@ -49,17 +56,6 @@
             HeadLabel.Size = new Size(384, 70);
             HeadLabel.TabIndex = 0;
             HeadLabel.Text = "Posman clone";
-            // 
-            // ResultsText
-            // 
-            ResultsText.Location = new Point(66, 350);
-            ResultsText.Margin = new Padding(5);
-            ResultsText.Multiline = true;
-            ResultsText.Name = "ResultsText";
-            ResultsText.ReadOnly = true;
-            ResultsText.ScrollBars = ScrollBars.Both;
-            ResultsText.Size = new Size(889, 541);
-            ResultsText.TabIndex = 3;
             // 
             // CallApi
             // 
@@ -98,33 +94,90 @@
             CallLabel.TabIndex = 6;
             CallLabel.Text = "URL\r\n";
             // 
-            // ResultsLabel
-            // 
-            ResultsLabel.AutoSize = true;
-            ResultsLabel.Location = new Point(66, 312);
-            ResultsLabel.Name = "ResultsLabel";
-            ResultsLabel.Size = new Size(120, 45);
-            ResultsLabel.TabIndex = 7;
-            ResultsLabel.Text = "Results\r\n";
-            // 
             // UrlText
             // 
-            UrlText.Location = new Point(94, 114);
+            UrlText.Location = new Point(211, 120);
             UrlText.Name = "UrlText";
-            UrlText.Size = new Size(996, 50);
+            UrlText.Size = new Size(879, 50);
             UrlText.TabIndex = 8;
+            // 
+            // MethodNav
+            // 
+            MethodNav.DropDownStyle = ComboBoxStyle.DropDownList;
+            MethodNav.FormattingEnabled = true;
+            MethodNav.Items.AddRange(new object[] { "GET", "POST", "PUT", "PATCH", "DELETE" });
+            MethodNav.Location = new Point(92, 117);
+            MethodNav.Name = "MethodNav";
+            MethodNav.Size = new Size(124, 53);
+            MethodNav.TabIndex = 9;
+            MethodNav.UseWaitCursor = true;
+            // 
+            // CallData
+            // 
+            CallData.Controls.Add(tabBody);
+            CallData.Controls.Add(tabResults);
+            CallData.Location = new Point(67, 218);
+            CallData.Name = "CallData";
+            CallData.SelectedIndex = 0;
+            CallData.Size = new Size(875, 605);
+            CallData.TabIndex = 10;
+            // 
+            // tabBody
+            // 
+            tabBody.Controls.Add(BodyText);
+            tabBody.Location = new Point(4, 54);
+            tabBody.Name = "tabBody";
+            tabBody.Padding = new Padding(3);
+            tabBody.Size = new Size(867, 547);
+            tabBody.TabIndex = 0;
+            tabBody.Text = "Body";
+            tabBody.UseVisualStyleBackColor = true;
+            // 
+            // BodyText
+            // 
+            BodyText.Dock = DockStyle.Fill;
+            BodyText.Location = new Point(3, 3);
+            BodyText.Margin = new Padding(5);
+            BodyText.Multiline = true;
+            BodyText.Name = "BodyText";
+            BodyText.ScrollBars = ScrollBars.Both;
+            BodyText.Size = new Size(861, 541);
+            BodyText.TabIndex = 4;
+            // 
+            // tabResults
+            // 
+            tabResults.Controls.Add(ResultsText);
+            tabResults.Location = new Point(4, 54);
+            tabResults.Name = "tabResults";
+            tabResults.Padding = new Padding(3);
+            tabResults.Size = new Size(867, 547);
+            tabResults.TabIndex = 1;
+            tabResults.Text = "Results";
+            tabResults.UseVisualStyleBackColor = true;
+            // 
+            // ResultsText
+            // 
+            ResultsText.Dock = DockStyle.Fill;
+            ResultsText.Location = new Point(3, 3);
+            ResultsText.Margin = new Padding(5);
+            ResultsText.Multiline = true;
+            ResultsText.Name = "ResultsText";
+            ResultsText.ReadOnly = true;
+            ResultsText.ScrollBars = ScrollBars.Both;
+            ResultsText.Size = new Size(861, 541);
+            ResultsText.TabIndex = 4;
             // 
             // DashBord
             // 
             AutoScaleDimensions = new SizeF(18F, 45F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1265, 928);
+            Controls.Add(CallData);
+            Controls.Add(MethodNav);
             Controls.Add(UrlText);
-            Controls.Add(ResultsLabel);
             Controls.Add(CallLabel);
             Controls.Add(statusStrip1);
             Controls.Add(CallApi);
-            Controls.Add(ResultsText);
             Controls.Add(HeadLabel);
             Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(5);
@@ -132,6 +185,11 @@
             Text = "PostMan by avrum indig";
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            CallData.ResumeLayout(false);
+            tabBody.ResumeLayout(false);
+            tabBody.PerformLayout();
+            tabResults.ResumeLayout(false);
+            tabResults.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,7 +204,13 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel SystemStatus;
         private Label CallLabel;
-        private Label ResultsLabel;
         private TextBox UrlText;
+        private ComboBox MethodNav;
+        private TabControl CallData
+            ;
+        private TabPage tabBody
+   ;
+        private TabPage tabResults;
+        private TextBox BodyText;
     }
 }

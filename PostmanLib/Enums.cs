@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace PostmanLib;
-public enum HttpMethod
+public enum HttpAction
 {
-    Get,
-    Post,
-    Put,
-    Delete,
-    Patch,
-    Head,
-    Options,
-    Trace
+    GET,
+    POST,
+    PUT,
+    DELETE,
+    PATCH,
+   
 }

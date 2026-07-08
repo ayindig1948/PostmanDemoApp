@@ -15,12 +15,12 @@ namespace Postman_WinForm
         private async void CallApi_Click(object sender, EventArgs e)
         {
             SystemStatus.Text = "Calling API...";
-            ResultsText.Text="";
+            ResultsText.Text = "";
             if (_api.IsValidUrl(UrlText.Text) == false)
             {
                 SystemStatus.Text = "Invalid URL";
                 ResultsText.Text = "Please enter a valid URL.";
-             
+
             }
             HttpAction method;
             if (Enum.TryParse(MethodNav.SelectedItem!.ToString(), out method) == false)
@@ -31,10 +31,10 @@ namespace Postman_WinForm
             }
             try
             {
-                
-             ResultsText.Text= await _api.CallApi(UrlText.Text,BodyText.Text,true,method);
-                
-                SystemStatus.Text="API Called Successfully";
+
+                ResultsText.Text = await _api.CallApi(UrlText.Text, BodyText.Text, true, method);
+
+                SystemStatus.Text = "API Called Successfully";
                 CallData.SelectedTab = tabResults;
                 tabResults.Focus();
                 return;
@@ -49,6 +49,11 @@ namespace Postman_WinForm
                 CallData.SelectedTab = tabResults;
                 return;
             }
+        }
+
+        private void MethodNav_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

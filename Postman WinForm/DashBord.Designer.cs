@@ -53,9 +53,9 @@
             HeadLabel.Location = new Point(83, 34);
             HeadLabel.Margin = new Padding(5, 0, 5, 0);
             HeadLabel.Name = "HeadLabel";
-            HeadLabel.Size = new Size(384, 70);
+            HeadLabel.Size = new Size(990, 140);
             HeadLabel.TabIndex = 0;
-            HeadLabel.Text = "Posman clone";
+            HeadLabel.Text = "Potman clone a light way to test a api\r\n\r\n";
             // 
             // CallApi
             // 
@@ -111,6 +111,7 @@
             MethodNav.Size = new Size(124, 53);
             MethodNav.TabIndex = 9;
             MethodNav.UseWaitCursor = true;
+            MethodNav.SelectedIndexChanged += MethodNav_SelectedIndexChanged;
             // 
             // CallData
             // 
@@ -147,10 +148,10 @@
             // tabResults
             // 
             tabResults.Controls.Add(ResultsText);
-            tabResults.Location = new Point(4, 54);
+            tabResults.Location = new Point(4, 34);
             tabResults.Name = "tabResults";
             tabResults.Padding = new Padding(3);
-            tabResults.Size = new Size(867, 547);
+            tabResults.Size = new Size(867, 567);
             tabResults.TabIndex = 1;
             tabResults.Text = "Results";
             tabResults.UseVisualStyleBackColor = true;
@@ -164,7 +165,7 @@
             ResultsText.Name = "ResultsText";
             ResultsText.ReadOnly = true;
             ResultsText.ScrollBars = ScrollBars.Both;
-            ResultsText.Size = new Size(861, 541);
+            ResultsText.Size = new Size(861, 561);
             ResultsText.TabIndex = 4;
             // 
             // DashBord
